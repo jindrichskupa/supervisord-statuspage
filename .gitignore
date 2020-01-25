@@ -1,0 +1,4 @@
+/.vscode/
+/vendor/
+/svd-statuspage
+*.log
