@@ -1,5 +1,7 @@
 # Supervisord status page
 
+Simple supervisord statuspage for healthcheck. Just call simple `/healtz` via HTTP and get 200 or 500 and process list.
+
 ## Usage
 
 ### Supervisord configuration
@@ -8,11 +10,11 @@
 [supervisord]
 nodaemon=true
 
-# turn on XML-RPC interface
+; turn on XML-RPC interface
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 
-# listen on localhost 9001
+; listen on localhost 9001
 [inet_http_server]         ; inet (TCP) server disabled by default
 port=127.0.0.1:9001
 
