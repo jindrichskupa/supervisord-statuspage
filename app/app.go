@@ -12,12 +12,12 @@ import (
 // App has router and db instances
 type App struct {
 	Router *mux.Router
-	RpcURL string
+	RPCURL string
 }
 
 // Initialize application with predefined configuration
 func (a *App) Initialize(config *config.Config) {
-	a.RpcURL = config.RPCURL
+	a.RPCURL = config.RPCURL
 	a.Router = mux.NewRouter()
 	a.setRouters()
 	log.Println("Supervisord statuspage started")
@@ -36,7 +36,7 @@ func (a *App) Get(path string, f func(w http.ResponseWriter, r *http.Request)) {
 
 // GetHealtStatus retuns application status info
 func (a *App) GetHealtStatus(w http.ResponseWriter, r *http.Request) {
-	handler.GetHealtStatus(a.RpcURL, w, r)
+	handler.GetHealtStatus(a.RPCURL, w, r)
 }
 
 // Run the app on it's router
