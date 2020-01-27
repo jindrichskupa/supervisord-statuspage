@@ -17,7 +17,7 @@ type App struct {
 
 // Initialize application with predefined configuration
 func (a *App) Initialize(config *config.Config) {
-	a.RpcURL = config.RpcURL
+	a.RpcURL = config.RPCURL
 	a.Router = mux.NewRouter()
 	a.setRouters()
 	log.Println("Supervisord statuspage started")
